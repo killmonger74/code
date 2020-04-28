@@ -26,7 +26,7 @@ public:
          return best;
 	} */
 
-	/* the secoond approach is Divide and Conquer of O(NLOG(N))*/
+	/* the second approach is Divide and Conquer of O(NLOG(N))*/
         int inf=1e9;
         int n=v.size(); 
         if(n==1){
