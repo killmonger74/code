@@ -1,3 +1,4 @@
+/// DSU is a important  data structure ,that took O(e) in formation and helpful in finding the connected component in graphs 
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -8,15 +9,9 @@ if(par[a]==a)return par[a];
 else return par[a]=find1(par[a]);
 
 }
-void updateparent(int b,int n){
-    for(int i=1;i<=n;i++){
-        if(par[i]==b)par[i]=par[b];
-    }
-    return ;
-}
-void union1(int a ,int b,int n){
+
+void union1(int a ,int b){
 par[b]=par[a];
-updateparent(b,n);
 return;
 }
 int main(){
@@ -24,7 +19,7 @@ int n;
 cin>>n;
 for(int i=1;i<=n;i++){
     par[i]=i;
-    ///ra[i]=0;
+
 }
 int e;
 cin>>e;
@@ -33,15 +28,22 @@ for(int i=0;i<e;i++)
     cin>>a>>b;
     int x=find1(a);
     int y=find1(b);
-   /// cout<<"X" <<x << " Y"<<y<<endl;
+
     if(x!=y){
 
-        union1(a,b,n);
+        union1(a,b);
 
-        ///updatepar(a,b);
+
     }
 
 }
+    for(int i=1;i<=n;i++){ ///This is for the handling the corner cases 
+
+            int x=find1(i);
+            int y=find1(par[i]);
+            if(x!=y)union1(x,y);
+
+    }
 for(int i=1;i<=n;i++){
     cout<<i<<" " <<par[i]<<endl;
 }
