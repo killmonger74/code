@@ -10,7 +10,7 @@ public:
     int singleNumber(vector<int>& nums) {
         map<int,int>m;
         int x=0;
-	/* Using BIT operations*/      
+	/* Using BIT operations in k sets*/      
  for(auto y:nums){
             x^=y;
         }
