@@ -14,7 +14,7 @@ public:
  for(auto y:nums){
             x^=y;
         }
-	/* using MAP datastructure*/
+	
 	map<int,int> m;
        for(int i=0;i<nums.size();i++){
              m[nums[i]]++;
