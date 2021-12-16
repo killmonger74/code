@@ -21,7 +21,7 @@ public:
          }
          for(auto it:m){
              if(it.second==1)x=it.first;
-        // }
+         }
         return x;
     }
 };
